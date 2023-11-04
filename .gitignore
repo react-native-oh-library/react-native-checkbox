@@ -52,5 +52,6 @@ dist
 *.jsbundle
 .tmp/
 src/dist
+lib
 
 */ios/Pods
