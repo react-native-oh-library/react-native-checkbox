@@ -17,10 +17,13 @@ namespace react {
 
     RNCCheckboxProps::RNCCheckboxProps(const PropsParserContext &context, const RNCCheckboxProps &sourceProps,
                                        const RawProps &rawProps): ViewProps(context, sourceProps, rawProps),
-          value(convertRawProp(context, rawProps, "value", sourceProps.value, {false})),
-          disabled(convertRawProp(context, rawProps, "disabled", sourceProps.disabled, {false})),
-          onCheckColor(convertRawProp(context, rawProps, "onCheckColor", sourceProps.onCheckColor, {})),
-          tintColor(convertRawProp(context, rawProps, "tintColor", sourceProps.tintColor, {}))
+            value(convertRawProp(context, rawProps, "value", sourceProps.value, {false})),
+            disabled(convertRawProp(context, rawProps, "disabled", sourceProps.disabled, {false})),
+            onCheckColor(convertRawProp(context, rawProps, "onCheckColor", sourceProps.onCheckColor, {})),
+            markSize(convertRawProp(context, rawProps, "markSize", sourceProps.markSize, {-1.0})),
+            strokeWidth(convertRawProp(context, rawProps, "strokeWidth", sourceProps.strokeWidth, {-1.0})),
+            strokeColor(convertRawProp(context, rawProps, "strokeColor", sourceProps.strokeColor, {})),
+            tintColor(convertRawProp(context, rawProps, "tintColor", sourceProps.tintColor, {}))
     {}
 
 } // namespace react

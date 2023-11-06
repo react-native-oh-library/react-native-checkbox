@@ -28,7 +28,6 @@ import {
   convertColorSegmentsToString,
   ColorSegments,
   ViewDynamicProps
-
 } from 'rnoh'
 
 export const CHECKBOX_TYPE = "RNCCheckbox" as const
@@ -38,6 +37,9 @@ export type CheckboxProps = ViewDynamicProps & {
   tintColor: ColorSegments
   value: boolean
   disabled: boolean
+  markSize:number,
+  strokeWidth:number,
+  strokeColor:ColorSegments,
 }
 export type CheckboxDescriptor = Descriptor<typeof CHECKBOX_TYPE, CheckboxProps>
 
@@ -57,8 +59,6 @@ export struct RNCCheckbox {
     )
     console.info(`RNOH Checkbox ${JSON.stringify(this.descriptor.props)}`)
   }
-
-  currentValue: boolean
 
   aboutToDisappear() {
     this.unregisterDescriptorChangesListener?.()
@@ -85,5 +85,9 @@ export struct RNCCheckbox {
       .selectedColor(convertColorSegmentsToString(this.descriptor.props.onCheckColor))
       .unselectedColor(convertColorSegmentsToString(this.descriptor.props.tintColor))
       .onChange((v)=>{this.onChange(v)})
+      .mark({
+        strokeColor:convertColorSegmentsToString(this.descriptor.props.strokeColor),
+        size: this.descriptor.props.markSize,
+        strokeWidth: this.descriptor.props.strokeWidth})
     }
 }

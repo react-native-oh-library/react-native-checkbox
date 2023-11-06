@@ -42,10 +42,13 @@ function CheckboxBase({
   onCheckColor,
   testID,
   forwardedRef,
+  markSize,
+  strokeWidth,
+  strokeColor,
   ...props
 }: CheckBoxProps & { forwardedRef: React.Ref<any> }) {
   return (
-    <View testID={testID} style={[styles.imageContainer, style]} ref={forwardedRef}>
+    <View testID={testID} style={[styles.container, style]} ref={forwardedRef}>
       <RNCCheckbox
         {...props}
         style={StyleSheet.absoluteFill}
@@ -57,6 +60,9 @@ function CheckboxBase({
         onCheckColor={onCheckColor}
         value={value}
         disabled={disabled}
+        markSize={markSize}
+        strokeWidth={strokeWidth}
+        strokeColor={strokeColor}
       />
     </View>
   )
@@ -77,7 +83,7 @@ export interface CheckBoxStaticProperties {
 const CheckBox: React.ComponentType<CheckBoxProps> = CheckBoxComponent as any
 
 const styles = StyleSheet.create({
-  imageContainer: {
+  container: {
     overflow: 'hidden',
     height: 32,
     width: 32,

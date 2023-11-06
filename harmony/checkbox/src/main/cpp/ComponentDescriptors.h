@@ -23,11 +23,25 @@
  */
 #pragma once
 
-#include "ShadowNodes.h"
+#include "EventEmitters.h"
+#include "Props.h"
+#include <react/renderer/components/view/ConcreteViewShadowNode.h>
+#include <jsi/jsi.h>
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 
 namespace facebook {
 namespace react {
+
+JSI_EXPORT extern const char RNCCheckboxComponentName[] = "RNCCheckbox";
+
+/*
+ * `ShadowNode` for <RNCCheckbox> component.
+ */
+using RNCCheckboxShadowNode = ConcreteViewShadowNode<
+    RNCCheckboxComponentName,
+    RNCCheckboxProps,
+    RNCCheckboxEventEmitter
+    >;
 
 using RNCCheckboxComponentDescriptor = ConcreteComponentDescriptor<RNCCheckboxShadowNode>;
 
