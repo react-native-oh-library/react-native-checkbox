@@ -28,8 +28,8 @@ import React from "react";
 import RNCCheckbox from "./RNCCheckboxNativeComponent"
 
 type CheckBoxProps = CheckBoxNativeProps & {
-  onValueChange: (value: boolean) => void
-  testID:string | undefined;
+  onValueChange?: (value: boolean) => void
+  testID?: string | undefined;
 }
 
 function CheckboxBase({
@@ -43,13 +43,13 @@ function CheckboxBase({
   testID,
   forwardedRef,
   ...props
-}: CheckBoxProps & { forwardedRef: React.Ref<any>}) {
+}: CheckBoxProps & { forwardedRef: React.Ref<any> }) {
   return (
     <View testID={testID} style={[styles.imageContainer, style]} ref={forwardedRef}>
       <RNCCheckbox
         {...props}
         style={StyleSheet.absoluteFill}
-        onChange={(event)=>{
+        onChange={(event) => {
           onChange && onChange(event);
           onValueChange && onValueChange(event.nativeEvent.value);
         }}
