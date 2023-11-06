@@ -34,24 +34,10 @@ import {
 export const CHECKBOX_TYPE = "RNCCheckbox" as const
 
 export type CheckboxProps = ViewDynamicProps & {
-  // disabled: boolean
-  // inverted: boolean
-  // vertical: boolean
-  // tapToSeek: boolean
-  // maximumTrackTintColor: ColorSegments
-  // minimumTrackTintColor: ColorSegments
-  // thumbImage: string
-  // maximumValue: number
-  // minimumValue: number
-  // step: number
-  // lowerLimit: number
-  tintColor: ColorSegments
   onCheckColor: ColorSegments
-  onFillColor: ColorSegments
-  onTintColor: ColorSegments
+  tintColor: ColorSegments
   value: boolean
   disabled: boolean
-  animationDuration: number
 }
 export type CheckboxDescriptor = Descriptor<typeof CHECKBOX_TYPE, CheckboxProps>
 
@@ -79,16 +65,6 @@ export struct RNCCheckbox {
   }
 
   onChange(value: boolean) {
-    // this.currentValue = value
-    this.ctx.rnInstanceManager.emitComponentEvent(
-      this.descriptor.tag,
-      CHECKBOX_TYPE,
-      {
-        type: "onValueChange",
-        value: value,
-      }
-    );
-
     this.ctx.rnInstanceManager.emitComponentEvent(
       this.descriptor.tag,
       CHECKBOX_TYPE,
@@ -96,13 +72,13 @@ export struct RNCCheckbox {
         type: "onChange",
         value: value,
         target:this.tag,
-        name: "tap",
       }
     );
   }
 
   build() {
     Checkbox()
+      .enabled(!this.descriptor.props.disabled)
       .select(this.descriptor.props.value)
       .width('100%')
       .height('100%')

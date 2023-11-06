@@ -20,18 +20,10 @@ class JSI_EXPORT RNCCheckboxEventEmitter : public ViewEventEmitter {
   using ViewEventEmitter::ViewEventEmitter;
 
   struct OnChange {
-      Float target;
-    bool value;
-//    std::string name;
+        Float target;
+        bool value;
     };
-
-  struct OnValueChangeNative {
-      bool value;
-    };
-
   void onChange(OnChange value) const;
-
-  void onValueChangeNative(OnValueChangeNative value) const;
 };
 
 } // namespace react

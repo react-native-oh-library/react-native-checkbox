@@ -25,14 +25,8 @@ class JSI_EXPORT RNCCheckboxProps final : public ViewProps {
 #pragma mark - Props
   bool value{false};
   bool disabled{false};
-  std::string testID{};
-  Float lineWidth{0.0};
-  bool hideBox{false};
-  SharedColor tintColor{};
   SharedColor onCheckColor{};
-  SharedColor onFillColor{};
-  SharedColor onTintColor{};
-  Float animationDuration{0.0};
+  SharedColor tintColor{};
 };
 
 } // namespace react

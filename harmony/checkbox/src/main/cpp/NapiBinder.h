@@ -33,29 +33,12 @@ public:
     napi_value createProps(napi_env env, facebook::react::ShadowView const shadowView) override {
         napi_value napiViewProps = ViewComponentNapiBinder::createProps(env, shadowView);
         if (auto props = std::dynamic_pointer_cast<const facebook::react::RNCCheckboxProps>(shadowView.props)) {
-
             return ArkJS(env)
                 .getObjectBuilder(napiViewProps)
-                //                                .addProperty("disabled", props->disabled)
-                //                                .addProperty("inverted", props->inverted)
-                //                                .addProperty("vertical", props->vertical)
-                //                                .addProperty("tapToSeek", props->tapToSeek)
-                //                                .addProperty("maximumTrackTintColor", props->maximumTrackTintColor)
-                //                                .addProperty("minimumTrackTintColor", props->minimumTrackTintColor)
-                //                                .addProperty("thumbTintColor", props->thumbTintColor)
-                //                                .addProperty("thumbImage", props->thumbImage.uri)
-                //                                .addProperty("maximumValue", props->maximumValue)
-                //                                .addProperty("minimumValue", props->minimumValue)
-                //                                .addProperty("step", props->step)
-                .addProperty("tintColor", props->tintColor)
                 .addProperty("onCheckColor", props->onCheckColor)
-                .addProperty("onFillColor", props->onFillColor)
-                .addProperty("onTintColor", props->onTintColor)
-
-            //                ---
-            .addProperty("value", props->value)
-            .addProperty("disabled", props->disabled)
-            .addProperty("animationDuration", props->animationDuration)
+                .addProperty("tintColor", props->tintColor)
+                .addProperty("value", props->value)
+                .addProperty("disabled", props->disabled)
                 .build();
         }
         return napiViewProps;

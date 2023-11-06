@@ -32,15 +32,12 @@ namespace rnoh {
 
     enum CheckboxEventType {
         CHANGE,
-        VALUE_CHANGE,
     };
 
     CheckboxEventType getCheckboxEventType(ArkJS &arkJs, napi_value eventObject) {
         auto eventType = arkJs.getString(arkJs.getObjectProperty(eventObject, "type"));
         if (eventType == "onChange") {
             return CheckboxEventType::CHANGE;
-        } else if (eventType == "onValueChange") {
-            return CheckboxEventType::VALUE_CHANGE;
         } else {
             throw std::runtime_error("Unknown Checkbox event type");
         }
@@ -59,19 +56,10 @@ namespace rnoh {
             }
             auto eventType = getCheckboxEventType(arkJs, ctx.payload);
             switch (eventType) {
-            case CheckboxEventType::VALUE_CHANGE: {
-                bool value = arkJs.getBoolean(arkJs.getObjectProperty(ctx.payload, "value"));
-                react::RNCCheckboxEventEmitter::OnValueChangeNative event = {value};
-                eventEmitter->onValueChangeNative(event);
-                break;
-            }
-
             case CheckboxEventType::CHANGE: {
                 bool value = arkJs.getBoolean(arkJs.getObjectProperty(ctx.payload, "value"));
                 facebook::react::Float target = arkJs.getDouble(arkJs.getObjectProperty(ctx.payload, "target"));
-//                std::string name = arkJs.getString(arkJs.getObjectProperty(ctx.payload, "name"));
                 react::RNCCheckboxEventEmitter::OnChange event = {target,value};
-//                react::RNCCheckboxEventEmitter::OnChange event = {target,value,name};
                 eventEmitter->onChange(event);
                 break;
             }

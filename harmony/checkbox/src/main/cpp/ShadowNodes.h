@@ -24,7 +24,6 @@
 #pragma once
 #include "EventEmitters.h"
 #include "Props.h"
-#include "States.h"
 #include <react/renderer/components/view/ConcreteViewShadowNode.h>
 #include <jsi/jsi.h>
 
@@ -39,8 +38,8 @@ JSI_EXPORT extern const char RNCCheckboxComponentName[] = "RNCCheckbox";
 using RNCCheckboxShadowNode = ConcreteViewShadowNode<
     RNCCheckboxComponentName,
     RNCCheckboxProps,
-    RNCCheckboxEventEmitter,
-    RNCCheckboxState>;
+    RNCCheckboxEventEmitter
+    >;
 
 } // namespace react
 } // namespace facebook

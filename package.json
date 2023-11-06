@@ -1,7 +1,10 @@
 {
   "name": "@react-native-oh-library/checkbox",
-  "version": "0.5.16-1.0.3",
-  "description": "test",
+  "version": "0.5.16-0.0.1",
+  "description": "React Native Checkbox native modules for Android , iOS , harmony and Windows",  
+  "harmony": {
+    "alias": "@react-native-community/slider"
+  },
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -12,6 +15,7 @@
     "lib",
     "android",
     "ios",
+    "harmony",
     "cpp",
     "*.podspec",
     "!lib/typescript/example",
@@ -37,9 +41,9 @@
     "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
   "keywords": [
-    "react-native",
-    "ios",
-    "android"
+    "checkbox",
+    "react native",
+    "react-native"
   ],
   "homepage": "https://github.com/react-native-community/react-native-checkbox#readme",
   "repository": {
@@ -50,7 +54,7 @@
   "license": "MIT",
   
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "devDependencies": {
     "@evilmartians/lefthook": "^1.2.2",
@@ -79,7 +83,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": ">= 0.62",
+    "react-native-windows": ">=0.62"
   },
   "engines": {
     "node": ">= 16.0.0"
@@ -115,22 +120,23 @@
     }
   },
   "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
+    "extends": "@react-native-community",
+    "env": {
+      "es6": true,
+      "jest": true
+    },
+    "globals": {
+      "it": true,
+      "expect": true,
+      "element": true,
+      "describe": true,
+      "by": true,
+      "device": true,
+      "beforeAll": true,
+      "beforeEach": true,
+      "afterAll": true,
+      "jest": true,
+      "jasmine": true
     }
   },
   "eslintIgnore": [

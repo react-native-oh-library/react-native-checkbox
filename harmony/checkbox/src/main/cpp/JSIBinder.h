@@ -30,33 +30,16 @@ namespace rnoh {
 class CheckboxJSIBinder : public ViewComponentJSIBinder {
     facebook::jsi::Object createNativeProps(facebook::jsi::Runtime &rt) override {
         auto object = ViewComponentJSIBinder::createNativeProps(rt);
-//        object.setProperty(rt, "disabled", "boolean");
-//        object.setProperty(rt, "inverted", "boolean");
-//        object.setProperty(rt, "vertical", "boolean");
-//        object.setProperty(rt, "tapToSeek", "boolean");
-//        object.setProperty(rt, "maximumTrackTintColor", "Color");
-//        object.setProperty(rt, "minimumTrackTintColor", "Color");
-//        object.setProperty(rt, "thumbImage", "object");
-//        object.setProperty(rt, "maximumValue", "float");
-//        object.setProperty(rt, "minimumValue", "float");
-//        object.setProperty(rt, "step", "float");
-//        object.setProperty(rt, "lowerLimit", "float");
-
-        object.setProperty(rt, "tintColor", "Color");
         object.setProperty(rt, "onCheckColor", "Color");
-        object.setProperty(rt, "onFillColor", "Color");
-        object.setProperty(rt, "onTintColor", "Color");
+        object.setProperty(rt, "tintColor", "Color");
         object.setProperty(rt, "value", "boolean");
         object.setProperty(rt, "disabled", "boolean");
-        object.setProperty(rt, "animationDuration", "float");
-
         return object;
     }
     
     facebook::jsi::Object createDirectEventTypes(facebook::jsi::Runtime &rt) override {
         facebook::jsi::Object events(rt);
         events.setProperty(rt, "topChange", createDirectEvent(rt, "onChange"));
-        events.setProperty(rt, "topValueChangeNative", createDirectEvent(rt, "onValueChangeNative"));
         return events;
     }
 

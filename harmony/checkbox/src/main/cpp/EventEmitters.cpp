@@ -17,14 +17,6 @@ void RNCCheckboxEventEmitter::onChange(OnChange event) const {
   dispatchEvent("change", [event=std::move(event)](jsi::Runtime &runtime) {
     auto payload = jsi::Object(runtime);
     payload.setProperty(runtime, "target", event.target);
-payload.setProperty(runtime, "value", event.value);
-//payload.setProperty(runtime, "name", event.name);
-    return payload;
-  });
-}
-void RNCCheckboxEventEmitter::onValueChangeNative(OnValueChangeNative event) const {
-  dispatchEvent("valueChangeNative", [event=std::move(event)](jsi::Runtime &runtime) {
-    auto payload = jsi::Object(runtime);
     payload.setProperty(runtime, "value", event.value);
     return payload;
   });
