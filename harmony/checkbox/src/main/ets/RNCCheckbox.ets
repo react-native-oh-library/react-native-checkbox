@@ -27,26 +27,26 @@ import {
   RNOHContext,
   convertColorSegmentsToString,
   ColorSegments,
-  ViewDynamicProps
+  ViewBaseProps,
 } from 'rnoh'
 
-export const CHECKBOX_TYPE = "RNCCheckbox" as const
+export const CHECKBOX_TYPE: string = "RNCCheckbox"
 
-export type CheckboxProps = ViewDynamicProps & {
+export interface RNCCheckboxProps extends ViewBaseProps {
   onCheckColor: ColorSegments
   tintColor: ColorSegments
   value: boolean
   disabled: boolean
-  markSize:number,
-  strokeWidth:number,
-  strokeColor:ColorSegments,
+  markSize:number
+  strokeWidth:number
+  strokeColor:ColorSegments
 }
-export type CheckboxDescriptor = Descriptor<typeof CHECKBOX_TYPE, CheckboxProps>
+export type CheckboxDescriptor = Descriptor<"RNCCheckbox", RNCCheckboxProps>
 
 @Component
 export struct RNCCheckbox {
-  ctx: RNOHContext
-  tag: number
+  ctx!: RNOHContext
+  tag: number = 0
   @BuilderParam buildCustomComponent: (componentBuilderContext: ComponentBuilderContext) => void
   @State descriptor: CheckboxDescriptor = {} as CheckboxDescriptor
   private unregisterDescriptorChangesListener?: () => void = undefined

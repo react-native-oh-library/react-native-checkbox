@@ -16,6 +16,7 @@
     "android",
     "ios",
     "harmony",
+    "harmony/checkbox.har",
     "cpp",
     "*.podspec",
     "!lib/typescript/example",
