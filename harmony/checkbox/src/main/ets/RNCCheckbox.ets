@@ -29,8 +29,10 @@ import {
   ColorSegments,
   ViewBaseProps,
 } from 'rnoh'
+import Logger from './Logger'
 
 export const CHECKBOX_TYPE: string = "RNCCheckbox"
+const TAG: string = "[RNOH] RNCCheckbox"
 
 export interface RNCCheckboxProps extends ViewBaseProps {
   onCheckColor: ColorSegments
@@ -42,7 +44,6 @@ export interface RNCCheckboxProps extends ViewBaseProps {
   strokeColor:ColorSegments
 }
 export type CheckboxDescriptor = Descriptor<"RNCCheckbox", RNCCheckboxProps>
-
 @Component
 export struct RNCCheckbox {
   ctx!: RNOHContext
@@ -57,7 +58,7 @@ export struct RNCCheckbox {
         this.descriptor = (newDescriptor as CheckboxDescriptor)
       }
     )
-    console.info(`RNOH Checkbox ${JSON.stringify(this.descriptor.props)}`)
+    Logger.debug(TAG, `props ${JSON.stringify(this.descriptor.props)}`)
   }
 
   aboutToDisappear() {
