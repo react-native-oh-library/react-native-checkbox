@@ -56,3 +56,4 @@ lib
 
 */ios/Pods
 .npmrc
+package-lock.json
