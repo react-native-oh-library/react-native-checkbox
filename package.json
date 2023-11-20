@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-library/checkbox",
-  "version": "0.5.16-0.0.1",
+  "version": "0.5.16-0.0.2",
   "description": "React Native Checkbox native modules for Android , iOS , harmony and Windows",  
   "harmony": {
     "alias": "@react-native-community/checkbox"
@@ -34,7 +34,8 @@
   "scripts": {
     "test": "jest",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint": "npx eslint src",
+    "lint:fix": "npx eslint src --fix", 
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
