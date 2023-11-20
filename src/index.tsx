@@ -1,18 +1,18 @@
 /**
  * MIT License
- * 
+ *
  * Copyright (C) 2021 Huawei Device Co., Ltd.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANT KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -21,16 +21,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import { View, StyleSheet } from "react-native";
-import type { CheckBoxNativeProps } from "./RNCCheckboxNativeComponent";
-import { forwardRef, memo } from "react";
-import React from "react";
-import RNCCheckbox from "./RNCCheckboxNativeComponent"
+import { View, StyleSheet } from 'react-native';
+import type { CheckBoxNativeProps } from './RNCCheckboxNativeComponent';
+import { forwardRef, memo } from 'react';
+import React from 'react';
+import RNCCheckbox from './RNCCheckboxNativeComponent';
 
 type CheckBoxProps = CheckBoxNativeProps & {
-  onValueChange?: (value: boolean) => void
+  onValueChange?: (value: boolean) => void;
   testID?: string | undefined;
-}
+};
 
 function CheckboxBase({
   value,
@@ -65,22 +65,21 @@ function CheckboxBase({
         strokeColor={strokeColor}
       />
     </View>
-  )
+  );
 }
 
-const CheckBoxMemo = memo(CheckboxBase)
+const CheckBoxMemo = memo(CheckboxBase);
 const CheckBoxComponent: React.ComponentType<CheckBoxProps> = forwardRef(
   (props: CheckBoxProps, ref: React.Ref<any>) => (
     <CheckBoxMemo forwardedRef={ref} {...props} />
-  ),
-)
+  )
+);
 
-CheckBoxComponent.displayName = 'CheckBox'
+CheckBoxComponent.displayName = 'CheckBox';
 
-export interface CheckBoxStaticProperties {
-}
+export interface CheckBoxStaticProperties {}
 
-const CheckBox: React.ComponentType<CheckBoxProps> = CheckBoxComponent as any
+const CheckBox: React.ComponentType<CheckBoxProps> = CheckBoxComponent as any;
 
 const styles = StyleSheet.create({
   container: {
@@ -88,6 +87,6 @@ const styles = StyleSheet.create({
     height: 32,
     width: 32,
   },
-})
+});
 
-export default CheckBox
+export default CheckBox;

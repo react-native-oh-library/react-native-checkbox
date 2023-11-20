@@ -42,7 +42,7 @@ export interface CheckBoxNativeProps extends ViewProps {
   tintColor?: ColorValue;
   markSize?: WithDefault<Int32, -1>;
   strokeWidth?: WithDefault<Int32, -1>;
-  strokeColor?:  ColorValue;
+  strokeColor?: ColorValue;
 }
 
 export default codegenNativeComponent<CheckBoxNativeProps>(
