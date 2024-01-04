@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-checkbox",
+        "License": "MIT License",
+        "License File":"https://github.com/react-native-checkbox/react-native-checkbox/blob/develop/LICENSE",
+        "Version Number": "0.5.16-0.0.2",
+        "Owner" : ""
+        "Upstream URL": "https://github.com/react-native-checkbox/react-native-checkbox",
+        "Description": "React Native component for Checkbox."
+    }
+]
