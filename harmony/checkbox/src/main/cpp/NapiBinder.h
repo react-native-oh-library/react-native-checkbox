@@ -39,6 +39,7 @@ public:
                 .addProperty("tintColor", props->tintColor)
                 .addProperty("value", props->value)
                 .addProperty("disabled", props->disabled)
+                .addProperty("shape", props->shape)
                 .addProperty("markSize", props->markSize)
                 .addProperty("strokeWidth", props->strokeWidth)
                 .addProperty("strokeColor", props->strokeColor)

@@ -34,6 +34,7 @@ class CheckboxJSIBinder : public ViewComponentJSIBinder {
         object.setProperty(rt, "tintColor", "Color");
         object.setProperty(rt, "value", "boolean");
         object.setProperty(rt, "disabled", "boolean");
+        object.setProperty(rt, "shape", "int");
         object.setProperty(rt, "strokeColor", "Color");
         object.setProperty(rt, "markSize", "float");
         object.setProperty(rt, "strokeWidth", "float");

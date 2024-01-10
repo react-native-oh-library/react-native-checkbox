@@ -41,6 +41,7 @@ class JSI_EXPORT RNCCheckboxProps final : public ViewProps {
   bool disabled{false};
   SharedColor onCheckColor{};
   SharedColor tintColor{};
+  int shape{0};
   Float markSize{-1.0};
   Float strokeWidth{-1.0};
   SharedColor strokeColor{};

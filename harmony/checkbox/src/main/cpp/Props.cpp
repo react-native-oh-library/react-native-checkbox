@@ -35,6 +35,7 @@ namespace react {
             disabled(convertRawProp(context, rawProps, "disabled", sourceProps.disabled, {false})),
             onCheckColor(convertRawProp(context, rawProps, "onCheckColor", sourceProps.onCheckColor, {})),
             markSize(convertRawProp(context, rawProps, "markSize", sourceProps.markSize, {-1.0})),
+            shape(convertRawProp(context, rawProps, "shape", sourceProps.shape, {0})),
             strokeWidth(convertRawProp(context, rawProps, "strokeWidth", sourceProps.strokeWidth, {-1.0})),
             strokeColor(convertRawProp(context, rawProps, "strokeColor", sourceProps.strokeColor, {})),
             tintColor(convertRawProp(context, rawProps, "tintColor", sourceProps.tintColor, {}))

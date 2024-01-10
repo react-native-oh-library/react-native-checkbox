@@ -40,6 +40,7 @@ export interface CheckBoxNativeProps extends ViewProps {
   onChange?: DirectEventHandler<ChangeEvent>;
   onCheckColor?: ColorValue;
   tintColor?: ColorValue;
+  shape?:WithDefault<Int32,0>;
   markSize?: WithDefault<Int32, -1>;
   strokeWidth?: WithDefault<Int32, -1>;
   strokeColor?: ColorValue;

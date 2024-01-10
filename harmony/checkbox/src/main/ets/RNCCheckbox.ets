@@ -40,6 +40,7 @@ export interface RNCCheckboxProps extends ViewBaseProps {
   value: boolean
   disabled: boolean
   markSize:number
+  shape:number
   strokeWidth:number
   strokeColor:ColorSegments
 }
@@ -83,6 +84,7 @@ export struct RNCCheckbox {
       .select(this.descriptor.props.value)
       .width('100%')
       .height('100%')
+      .shape(this.descriptor.props.shape)
       .selectedColor(convertColorSegmentsToString(this.descriptor.props.onCheckColor))
       .unselectedColor(convertColorSegmentsToString(this.descriptor.props.tintColor))
       .onChange((v)=>{this.onChange(v)})

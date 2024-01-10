@@ -41,6 +41,7 @@ function CheckboxBase({
   tintColor,
   onCheckColor,
   testID,
+  shape,
   forwardedRef,
   markSize,
   strokeWidth,
@@ -59,6 +60,7 @@ function CheckboxBase({
         tintColor={tintColor}
         onCheckColor={onCheckColor}
         value={value}
+        shape={shape}
         disabled={disabled}
         markSize={markSize}
         strokeWidth={strokeWidth}
