@@ -1,11 +1,11 @@
 {
   "name": "rnoh-checkbox",
-  "version": "0.0.1",
+  "version": "0.5.16-0.0.5",
   "description": "react-native-checkbox for HarmonyOS",
   "main": "index.ets",
   "author": "Huawei",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "rnoh": "file:../rnoh"
   }
 }
