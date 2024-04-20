@@ -28,7 +28,7 @@ import {
   convertColorSegmentsToString,
   ColorSegments,
   ViewBaseProps,
-} from 'rnoh'
+} from '@rnoh/react-native-openharmony'
 import Logger from './Logger'
 
 export const CHECKBOX_TYPE: string = "RNCCheckbox"
@@ -67,7 +67,7 @@ export struct RNCCheckbox {
   }
 
   onChange(value: boolean) {
-    this.ctx.rnInstanceManager.emitComponentEvent(
+    this.ctx.rnInstance.emitComponentEvent(
       this.descriptor.tag,
       CHECKBOX_TYPE,
       {
