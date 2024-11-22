@@ -1,0 +1,1 @@
+  export * as CheckBox from '@react-native-community/checkbox/typings/index'
