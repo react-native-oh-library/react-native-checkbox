@@ -1,11 +1,11 @@
 {
   "name": "@react-native-oh-tpl/checkbox",
-  "version": "0.5.16-0.0.7",
+  "version": "0.5.16-0.1.0",
   "description": "react-native-checkbox for HarmonyOS",
   "main": "index.ets",
   "author": "Huawei",
   "license": "MIT",
   "dependencies": {
-    "@rnoh/react-native-openharmony":"file:../react_native_openharmony"
+    "@rnoh/react-native-openharmony":"0.72.32"
   }
 }
