@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-tpl/checkbox",
-  "version": "0.5.16-0.0.7",
+  "version": "0.5.16-0.1.0",
   "description": "React Native Checkbox native modules for Android , iOS , harmony and Windows",  
   "harmony": {
     "alias": "@react-native-community/checkbox"

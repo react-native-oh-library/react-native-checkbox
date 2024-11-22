@@ -8,14 +8,14 @@
     "start": "hdc rport tcp:8081 tcp:8081 && react-native start",
     "codegen": "react-native codegen-harmony --rnoh-module-path ./harmony/entry/oh_modules/@rnoh/react-native-openharmony",
     "pack:pkg": "cd ../ && npm run pack:prod && cd ./example",
-    "install:pkg": "npm uninstall @react-native-oh-tpl/checkbox && npm run pack:pkg && npm i @react-native-oh-tpl/checkbox@file:../react-native-oh-tpl-checkbox-0.5.16-0.0.8.tgz",
+    "install:pkg": "npm uninstall @react-native-oh-tpl/checkbox && npm run pack:pkg && npm i @react-native-oh-tpl/checkbox@file:../react-native-oh-tpl-checkbox-0.5.16-0.1.0.tgz",
     "dev": "npm run codegen && react-native bundle-harmony --dev --minify=false",
     "prod": "npm run codegen && react-native bundle-harmony --dev=false --minify=true",
     "postinstall": "node ./scripts/create-build-profile"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
-    "@react-native-oh-tpl/checkbox": "file:../react-native-oh-tpl-checkbox-0.5.16-0.0.8.tgz",
+    "@react-native-oh-tpl/checkbox": "file:../react-native-oh-tpl-checkbox-0.5.16-0.1.0.tgz",
     "@rnoh/testerino": "file:rnoh_package/rnoh-testerino-0.0.9.tgz",
     "react": "18.2.0",
     "react-native": "0.72.5",
