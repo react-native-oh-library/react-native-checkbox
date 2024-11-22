@@ -53,7 +53,9 @@ dist
 .tmp/
 src/dist
 lib
-
+*.tgz
 */ios/Pods
 .npmrc
 package-lock.json
+example/harmony/checkbox/oh_modules/
+.vscode

@@ -1,0 +1,7 @@
+{
+  module: {
+    name: 'checkbox',
+    type: 'har',
+    deviceTypes: ['default'],
+  },
+}
